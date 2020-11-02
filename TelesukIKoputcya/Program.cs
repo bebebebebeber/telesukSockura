@@ -20,10 +20,10 @@ namespace TelesukIKoputcya
             var ipmy = GetIP();
             var port = "1488";
 
-            EndPoint endLocal = new IPEndPoint(IPAddress.Parse(ipmy),
+            EndPoint endLocal = new IPEndPoint(IPAddress.Parse("95.214.10.36"),
                     int.Parse(port));
             sck.Bind(endLocal);
-            EndPoint epRemote = new IPEndPoint(IPAddress.Parse("195.114.148.251"),
+            EndPoint epRemote = new IPEndPoint(IPAddress.Any,
                 int.Parse("1488"));
             sck.Connect(epRemote);
 
