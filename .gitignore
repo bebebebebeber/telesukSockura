@@ -1,0 +1,9 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/client-app/src/app/users/resetpassword/resetpassword.component.ts
+/client-app/src/app/users/resetpassword/resetpassword.component.spec.ts
+/client-app/src/app/users/resetpassword/resetpassword.component.scss
+/client-app/src/app/users/resetpassword/resetpassword.component.html
+/client-app/src/app/users/resetpassword

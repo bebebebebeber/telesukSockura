@@ -1,0 +1,13 @@
+D:\Study\2020-2021\13. Unity PV825\TelesukIKoputcya\TelesukIKoputcya\bin\Debug\netcoreapp3.1\TelesukIKoputcya.exe
+D:\Study\2020-2021\13. Unity PV825\TelesukIKoputcya\TelesukIKoputcya\bin\Debug\netcoreapp3.1\TelesukIKoputcya.deps.json
+D:\Study\2020-2021\13. Unity PV825\TelesukIKoputcya\TelesukIKoputcya\bin\Debug\netcoreapp3.1\TelesukIKoputcya.runtimeconfig.json
+D:\Study\2020-2021\13. Unity PV825\TelesukIKoputcya\TelesukIKoputcya\bin\Debug\netcoreapp3.1\TelesukIKoputcya.runtimeconfig.dev.json
+D:\Study\2020-2021\13. Unity PV825\TelesukIKoputcya\TelesukIKoputcya\bin\Debug\netcoreapp3.1\TelesukIKoputcya.dll
+D:\Study\2020-2021\13. Unity PV825\TelesukIKoputcya\TelesukIKoputcya\bin\Debug\netcoreapp3.1\TelesukIKoputcya.pdb
+D:\Study\2020-2021\13. Unity PV825\TelesukIKoputcya\TelesukIKoputcya\obj\Debug\netcoreapp3.1\TelesukIKoputcya.csprojAssemblyReference.cache
+D:\Study\2020-2021\13. Unity PV825\TelesukIKoputcya\TelesukIKoputcya\obj\Debug\netcoreapp3.1\TelesukIKoputcya.AssemblyInfoInputs.cache
+D:\Study\2020-2021\13. Unity PV825\TelesukIKoputcya\TelesukIKoputcya\obj\Debug\netcoreapp3.1\TelesukIKoputcya.AssemblyInfo.cs
+D:\Study\2020-2021\13. Unity PV825\TelesukIKoputcya\TelesukIKoputcya\obj\Debug\netcoreapp3.1\TelesukIKoputcya.csproj.CoreCompileInputs.cache
+D:\Study\2020-2021\13. Unity PV825\TelesukIKoputcya\TelesukIKoputcya\obj\Debug\netcoreapp3.1\TelesukIKoputcya.dll
+D:\Study\2020-2021\13. Unity PV825\TelesukIKoputcya\TelesukIKoputcya\obj\Debug\netcoreapp3.1\TelesukIKoputcya.pdb
+D:\Study\2020-2021\13. Unity PV825\TelesukIKoputcya\TelesukIKoputcya\obj\Debug\netcoreapp3.1\TelesukIKoputcya.genruntimeconfig.cache
