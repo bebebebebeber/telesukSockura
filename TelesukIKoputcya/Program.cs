@@ -18,13 +18,13 @@ namespace TelesukIKoputcya
             sck.SetSocketOption(SocketOptionLevel.Socket, SocketOptionName.ReuseAddress, true);
 
             var ipmy = GetIP();
-            var port = "1488";
+            var port = "568";
 
             EndPoint endLocal = new IPEndPoint(IPAddress.Parse("95.214.10.36"),
                     int.Parse(port));
             sck.Bind(endLocal);
             EndPoint epRemote = new IPEndPoint(IPAddress.Any,
-                int.Parse("1488"));
+                int.Parse("568"));
             sck.Connect(epRemote);
 
             byte[] buffer = new byte[2_000_000];
