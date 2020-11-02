@@ -11,57 +11,36 @@ namespace TelesukIKoputcya
         static Socket sck;
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!Оставшаяся емкость: 7145 миллиампер/ч");
-            ///Console.ReadKey();
-            sck = new Socket(AddressFamily.InterNetwork, SocketType.Dgram, ProtocolType.Udp);
-
-            sck.SetSocketOption(SocketOptionLevel.Socket, SocketOptionName.ReuseAddress, true);
-
-            var ipmy = GetIP();
-            var port = "568";
-
-            EndPoint endLocal = new IPEndPoint(IPAddress.Parse("95.214.10.36"),
-                    int.Parse(port));
-            sck.Bind(endLocal);
-            EndPoint epRemote = new IPEndPoint(IPAddress.Any,
-                int.Parse("568"));
-            sck.Connect(epRemote);
-
-            byte[] buffer = new byte[2_000_000];
-            sck.BeginReceiveFrom(buffer,
-                0,
-                buffer.Length,
-                SocketFlags.None,
-                ref epRemote,
-                new AsyncCallback(MessageCallBack),
-                buffer
-                );
-            sck.Send(Encoding.ASCII.GetBytes("qqw"));
-            Console.ReadKey();
-        }
-        private static void MessageCallBack(IAsyncResult ar)
-        {
+            Socket s = new Socket(AddressFamily.InterNetwork,
+                SocketType.Stream, ProtocolType.IP);
+            IPAddress ip = IPAddress.Parse("95.214.10.36");// IPAddress.Parse("127.0.0.1");
+            IPEndPoint ep = new IPEndPoint(ip, 568);
+            Console.Title = "Server " + ep.ToString();
+            s.Bind(ep); //Наш сокет звязаний з даною адресою
+            s.Listen(10);
             try
             {
-                    Console.WriteLine(Encoding.ASCII.GetString((byte[])ar.AsyncState));
-            }
-            catch (Exception ex)
-            {
-
-            }
-        }
-        private static string GetIP()
-        {
-            IPHostEntry host;
-            host = Dns.GetHostEntry(Dns.GetHostName());
-            foreach (var item in host.AddressList)
-            {
-                if (item.AddressFamily == AddressFamily.InterNetwork)
+                while (true)
                 {
-                    return item.ToString();
+                    Socket ns = s.Accept();
+                    string data = null;
+                    // Мы дождались клиента, пытающегося с нами соединиться
+
+                    byte[] bytes = new byte[1024];
+                    int bytesRec = ns.Receive(bytes);
+
+                    data += Encoding.UTF8.GetString(bytes, 0, bytesRec);
+                    Console.WriteLine("Нам прислали: " + data);
+                    Console.WriteLine(ns.RemoteEndPoint.ToString());
+                    ns.Send(Encoding.ASCII.GetBytes($"Vova server {DateTime.Now}"));
+                    ns.Shutdown(SocketShutdown.Both);
+                    ns.Close();
+
                 }
             }
-            return "127.0.0.1";
+            catch (SocketException ex)
+            {
+                Console.WriteLine("Socket problem: " + ex.Message);
+            }
         }
-    }
 }
