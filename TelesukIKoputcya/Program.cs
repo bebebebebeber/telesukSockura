@@ -23,7 +23,7 @@ namespace TelesukIKoputcya
             EndPoint endLocal = new IPEndPoint(IPAddress.Parse(ipmy),
                     int.Parse(port));
             sck.Bind(endLocal);
-            EndPoint epRemote = new IPEndPoint(IPAddress.Parse(ipmy),
+            EndPoint epRemote = new IPEndPoint(IPAddress.Parse("195.114.148.251"),
                 int.Parse("1488"));
             sck.Connect(epRemote);
 
