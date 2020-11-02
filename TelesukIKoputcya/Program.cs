@@ -43,4 +43,5 @@ namespace TelesukIKoputcya
                 Console.WriteLine("Socket problem: " + ex.Message);
             }
         }
+    }
 }
