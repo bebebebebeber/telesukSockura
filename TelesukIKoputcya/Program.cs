@@ -60,10 +60,11 @@ namespace TelesukIKoputcya
                     int bytesRec = ns.Receive(bytes);
 
                     data += Encoding.UTF8.GetString(bytes, 0, bytesRec);
-                    var player = JsonConvert.DeserializeObject<Play>(data);
+                    //var player = JsonConvert.DeserializeObject<Play>(data);
 
 
-                    Console.WriteLine("Нам прислали: " + player);
+                    //Console.WriteLine("Нам прислали: " + player);
+                    Console.WriteLine("Нам прислали: " + data);
                     Console.WriteLine(ns.RemoteEndPoint.ToString());
 
                     ns.Send(Encoding.ASCII.GetBytes($"Vova server {DateTime.Now}"));
