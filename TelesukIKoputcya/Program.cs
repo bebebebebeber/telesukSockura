@@ -61,9 +61,12 @@ namespace TelesukIKoputcya
 
                     data += Encoding.UTF8.GetString(bytes, 0, bytesRec);
                     Console.WriteLine("Нам прислали: " + data);
-
-                    var player = JsonConvert.DeserializeObject<Play>(data);
-                    Console.WriteLine("Нам прислали: " + player);
+                    try
+                    {
+                        var player = JsonConvert.DeserializeObject<Play>(data);
+                        Console.WriteLine("Нам прислали: " + player);
+                    }
+                    catch { Console.WriteLine("Bad data!!!"); }
                     
                     Console.WriteLine(ns.RemoteEndPoint.ToString());
 
