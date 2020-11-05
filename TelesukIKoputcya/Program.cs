@@ -43,8 +43,8 @@ namespace TelesukIKoputcya
         {
             Socket s = new Socket(AddressFamily.InterNetwork,
                 SocketType.Stream, ProtocolType.IP);
-            IPAddress ip = IPAddress.Parse("127.0.0.1");//IPAddress.Parse("91.204.84.93"); 
-            IPEndPoint ep = new IPEndPoint(ip, 568);
+            IPAddress ip = IPAddress.Parse("95.214.10.36");//IPAddress.Parse("91.204.84.93"); 
+            IPEndPoint ep = new IPEndPoint(ip, 560);
             Console.WriteLine("Server " + ep.ToString());
             s.Bind(ep); //Наш сокет звязаний з даною адресою
             s.Listen(10);
@@ -60,11 +60,11 @@ namespace TelesukIKoputcya
                     int bytesRec = ns.Receive(bytes);
 
                     data += Encoding.UTF8.GetString(bytes, 0, bytesRec);
-                    //var player = JsonConvert.DeserializeObject<Play>(data);
-
-
-                    //Console.WriteLine("Нам прислали: " + player);
                     Console.WriteLine("Нам прислали: " + data);
+
+                    var player = JsonConvert.DeserializeObject<Play>(data);
+                    Console.WriteLine("Нам прислали: " + player);
+                    
                     Console.WriteLine(ns.RemoteEndPoint.ToString());
 
                     ns.Send(Encoding.ASCII.GetBytes($"Vova server {DateTime.Now}"));
