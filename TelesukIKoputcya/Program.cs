@@ -44,7 +44,7 @@ namespace TelesukIKoputcya
             Socket s = new Socket(AddressFamily.InterNetwork,
                 SocketType.Stream, ProtocolType.IP);
             IPAddress ip = IPAddress.Parse("127.0.0.1");//IPAddress.Parse("91.204.84.93"); 
-            IPEndPoint ep = new IPEndPoint(ip, 560);
+            IPEndPoint ep = new IPEndPoint(ip, 568);
             Console.WriteLine("Server " + ep.ToString());
             s.Bind(ep); //Наш сокет звязаний з даною адресою
             s.Listen(10);
